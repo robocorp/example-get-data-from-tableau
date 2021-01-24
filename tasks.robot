@@ -43,15 +43,9 @@ Save Data Into JSON File
     Log   ${output}   level=WARN
     Save JSON to file    ${data}    ${OUT_JSON}
 
-*** Keywords ***
-Get data from Tableau
-    Copy Template To Work Version
-    ${text}  Load Tableau page and Get Data
-    Save Data Into JSON File  ${text}
-
 *** Tasks ***
 Get Data From Tableau
     Set Suite Variable  ${TAB_SHEET}   %{TAB_SHEET=${TAB_SHEET_DEFAULT}}
-    Get data from Tableau
-
-
+    Copy Template To Work Version
+    ${text}  Load Tableau page and Get Data
+    Save Data Into JSON File  ${text}

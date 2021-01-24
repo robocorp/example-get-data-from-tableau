@@ -20,7 +20,7 @@
             viz = new tableau.Viz(containerDiv, url, options);
         }
 
-        function getUnderlyingData() {
+        function getTableauData() {
             sheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("__TAB_SHEET__");
             // If the active sheet is not a dashboard, then you can just enter:
             // viz.getWorkbook().getActiveSheet();
@@ -43,8 +43,7 @@
 
 <body onload="initViz();">
     <div class="page-header">
-        <p>Click the "Get Data" button to get underlying data for the viz.</p>
-        <button id="getData" onclick="getUnderlyingData()" class="btn" disabled>Get Data</button>
+        <button id="getData" onclick="getTableauData()" class="btn" disabled>Get Data</button>
     </div>
     <div id="vizContainer" style="width:600px; height:600px;"></div>
     <div id="dataTarget"></div>
