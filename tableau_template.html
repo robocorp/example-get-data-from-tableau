@@ -31,7 +31,8 @@
                 includeAllColumns: false
             };
 
-            sheet.getUnderlyingDataAsync(options).then(function (t) {
+            //sheet.getUnderlyingDataAsync(options).then(function (t) {
+            sheet.getSummaryDataAsync(options).then(function (t) {
                 table = t;
                 var tgt = document.getElementById("dataTarget");
                 tgt.innerHTML = "<h4>Underlying Data:</h4><p id='jsonData'>" + JSON.stringify(table.getData()) + "</p>";
